@@ -1,5 +1,5 @@
 APPLICATION = bcast_sensor_data
-RIOTBASE ?= $(CURDIR)/../..
+RIOTBASE ?= $(CURDIR)/../../RIOT-OS
 BOARD ?= hamilton
 USEMODULE += xtimer
 USEMODULE += rtt_stdio

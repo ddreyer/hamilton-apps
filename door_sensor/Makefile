@@ -1,8 +1,8 @@
-APPLICATION = bcast_sensor_data
-RIOTBASE ?= $(CURDIR)/../../RIOT-OS
+APPLICATION = low_power_test
+RIOTBASE ?= /home/dyldreyer/Desktop/hamilton/RIOT-OS/
 BOARD ?= hamilton
-USEMODULE += xtimer
 USEMODULE += rtt_stdio
+CFLAGS += -DRTT_STDIO_DISABLE_STDIN
 #CFLAGS += -DRTT_STDIO_ENABLE_BLOCKING_STDOUT
 
 # Radio
@@ -11,6 +11,12 @@ USEMODULE += at86rf233
 # Sensors
 USEMODULE += at30ts74 # temperature sensor
 USEMODULE += mma7660 # accelerometer
+
+# Real-time counter (RTC) for low power mode
+FEATURES_REQUIRED = periph_rtt
+# 
+USEMODULE += xtimer
+
 
 # networking
 USEMODULE += gnrc_netdev_default
@@ -37,8 +43,8 @@ USEMODULE += netstats_ipv6
 # development process:
 CFLAGS += -DDEVELHELP
 
-DEFAULT_CHANNEL = 25
-CFLAGS += -DIEEE802154_DEFAULT_CHANNEL=$(DEFAULT_CHANNEL)
+DEFAULT_CHANNEL ?= 22
+CFLAGS += -DDEFAULT_CHANNEL=$(DEFAULT_CHANNEL)
 
 QUIET ?= 1
 

@@ -66,7 +66,7 @@ void server(void)
           //ipv6_hdr_t *ip = (ipv6_hdr_t *)tmp->data;
           //
           char *bytes = (char *)pkt->data;
-          z = (int8_t)bytes[4];
+          //z = (int8_t)bytes[4];
 	  
 	  if (bytes[2] == 0x11) {
 	    printf("door open\n");
@@ -302,7 +302,7 @@ int main(void)
 {
     msg_init_queue(_main_msg_queue, MAIN_QUEUE_SIZE);
 
-    //server();
-    client();
+    server();
+    //client();
     return 0;
 }

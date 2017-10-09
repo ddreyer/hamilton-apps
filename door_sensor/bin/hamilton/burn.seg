@@ -1,5 +1,5 @@
 speed 1000
-loadbin /home/dyldreyer/Desktop/hamilton/Apps/door_sensor/bin/hamilton/bcast_sensor_data.bin 0
+loadbin /home/dyldreyer/Desktop/hamilton/Apps/door_sensor/bin/hamilton/low_power_test.bin 0
 r
 g
 exit
